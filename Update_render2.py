@@ -177,9 +177,56 @@ colormap={
                 "DewPoint": "#6E8B3D"
                 }
 table_col=["#B22222","#79CDCD", "#1874CD", "#8B5A2B", "#F9844A", "#6E8B3D", "#F9C74F" ]
+table_colOP=["#B2222298","#79CDCD98", "#1874CD98", "#8B5A2B98", "#F9844A98", "#6E8B3D98", "#F9C74F98" ]
+
+palette={'red': '#F94144',
+         'lightorange': '#F8961E',
+         'muddygreen': '#90BE6D',
+         'blue': '#277DA1',
+         'yellow': '#F9C74F',
+         'samon': '#F9844A',
+         'turquoise': '#43AA8B'
+         
+         }
+
+palette2={'red': '#AE2012',
+         'lightorange': '#CA6702',
+         'lightblue': '#94D2BD',
+         'blue': '#005F73',
+         'yellow': '#EE9B00',
+         'lighteryellow': '#F9C74F',
+         'samon': '#F9844A',
+         'turquoise': '#0A9396',
+         'darkorange': '#BB3E03',
+         'purple': '#9e0059',
+         'green':'#3fa34d',
+         'mint':'#7ae582'
+         }
 
 
+#dodgerblue3	#1874CD	RGB(24,116,205)
+#darkslategray1	#79CDCD	RGB(151,255,255)
+#darksalmon	#E9967A	RGB(233,150,122)
+#darkolivegreen4	#6E8B3D	RGB(110,139,61)
+#tan4	#8B5A2B	RGB(139,90,43)
+#steelblue3	#4F94CD	RGB(79,148,205)
 
+#turquoise3	#00C5CD	RGB(0,197,205)
+#navy	#000080	RGB(0,0,128)
+#mediumseagreen	#3CB371	RGB(60,179,113)
+#firebrick	#B22222	RGB(178,34,34)
+#banana	#E3CF57	RGB(227,207,87)
+#aquamarine3	#66CDAA	RGB(102,205,170)
+#red1	#FF0000	RGB(255,0,0)
+#purple	#800080	RGB(128,0,128)	 
+#purple1	#9B30FF	RGB(155,48,255)
+#springgreen	#00FF7F	RGB(0,255,127)
+#lawngreen	#7CFC00	RGB(124,252,0)
+#aqua	#00FFFF	RGB(0,255,255)
+#'blue' : 'rgb(0,0,255)'
+#violetred4	#8B2252	RGB(139,34,82)
+#yellow1	#FFFF00	RGB(255,255,0)
+#gold1	#FFD700	RGB(255,215,0)
 
 corporate_colors = {
     'dark-blue-grey' : 'rgb(62, 64, 76)',
@@ -202,7 +249,7 @@ corporate_colors = {
     'dark-pink-red' : 'rgb(247, 80, 99)',
     'white' : 'rgb(255,255,255)', #not anymore  ##FBFBF
     'light-grey' : 'rgb(208, 206, 206)',
-    'bg': 'rgb(251,249,247)' #background color #FBF9F7
+    'bg': 'rgb(246, 242, 237)'   ##F6F2ED besser #background color #FBF9F7  	251, 249, 247
 }
 
 #ext row mit graph and tabelle
@@ -220,29 +267,43 @@ externalgraph_colstyling = {
     'border-color' : corporate_colors['white'],
     'background-color' : corporate_colors['bg'],
     #'box-shadow' : '0px 0px 17px 0px rgba(186, 218, 212, .5)',
-    'padding-top' : '0.4%'#vorher'5px' jeztz 5.1px #war 10 px   
+    'padding-top' : '0.4%' ,#vorher'5px' jeztz 5.1px #war 10 px 
+    'padding-left' : '0.6%',
+    'padding-right' : '0.3%',
 }
 
-filterdiv_borderstyling = {
-    'border-radius' : '0px 0px 10px 10px',
+boxcol_styling = {
+    #'border-radius' : '10px',
     'border-style' : 'solid',
     'border-width' : '1px',
-    'border-color' : corporate_colors['wheat'],
-    'background-color' : corporate_colors['wheat']
-    #,
-    #'box-shadow' : '2px 5px 5px 1px rgba(255, 101, 131, .5)'
+    'border-color' : corporate_colors['white'],
+    'background-color' : corporate_colors['white'],
+    #'box-shadow' : '0px 0px 17px 0px rgba(186, 218, 212, .5)',
+    'padding' : '5% 5%'#vorher'5px' jeztz 5.1px #war 10 px 
+    
     }
+# filterdiv_borderstyling = {
+#     'border-radius' : '0px 0px 10px 10px',
+#     'border-style' : 'solid',
+#     'border-width' : '1px',
+#     'border-color' : corporate_colors['wheat'],
+#     'background-color' : corporate_colors['wheat']
+#     #,
+#     #'box-shadow' : '2px 5px 5px 1px rgba(255, 101, 131, .5)'
+#     }
+
+
 
 #internal row mit graph und tabelle
 recapdiv = {
     'border-radius' : '10px',
     'border-style' : 'solid',
     'border-width' : '1px',
-    'border-color' : 'rgb(251, 251, 252, 0.1)',
-    'margin-left' : '1.2%',
-    'margin-right' : '1.2%',
+    'border-color' : corporate_colors['bg'],
+    'margin-left' : '1%',
+    'margin-right' : '1%',
     'margin-top' : '0.8%',
-    'margin-bottom' : '0.8%', #should be 12 px
+    'margin-bottom' : '2%', #should be 12 px
     'padding-top' : '0.4%',
     'padding-bottom' : '0.4%',
     'background-color' : corporate_colors['bg']
@@ -363,6 +424,7 @@ Der
 ####################################################################################################
 #sales_filepath = 'data/df.pkl'
 ###DATEN EINLESEN
+
 
 
 
@@ -575,7 +637,7 @@ def get_table_dd(dff):
     
     
     #dd_table.set_axis([Datum, ""], axis=1, inplace=True)
-    dd_table.set_axis(['Aktuelle Messungen vom',Datum], axis=1, inplace=True)
+    dd_table.set_axis(['Aktuelle Messungen vom '+ Datum+'',''], axis=1, inplace=True)
     #Zahlen runden
     #2 col alles ausser 1. reihe weil datum
     rounded=dd_table.iloc[1:,1]
@@ -602,28 +664,29 @@ def get_header():
 
     header = html.Div([
 
-        html.Div([
-            html.Img(
-                    src = app.get_asset_url('Sensirion1.png'),
-                    height = '35 px',
-                    width = 'auto')
+        # html.Div([
+        #     html.Img(
+        #             src = app.get_asset_url('Sensirion1.png'),
+        #             height = '35 px',
+        #             width = 'auto')
             
-            ],
-            className = 'col-2',
-            style = {'align-items': 'center',
-                    'padding-top' : '0.6%',
-                    'height' : 'auto'}
+        #     ],
+        #     className = 'col-2',
+        #     style = {'align-items': 'center',
+        #             'padding-top' : '0.6%',
+        #             'height' : 'auto'}
                     
 
-            ), #Same as img width, allowing to have the title centrally aligned
+           # ), #Same as img width, allowing to have the title centrally aligned
 
         html.Div([
             html.H1(children='Umweltdaten bei Noser Engineering Winterthur',
-                    style = {'textAlign' : 'center'
+                    style = {'textAlign' : 'left'
                              }
             )],
             className='col-8',
-            style = {'padding-top' : '0.6%'}
+            style = {'padding-top' : '1%',
+                     'padding-left' : '5%'}
         ),
 
         html.Div([
@@ -631,17 +694,41 @@ def get_header():
                     src = app.get_asset_url('NoserEng_Logo_RGB.webp'),
                     height = '30 px',
                     width = 'auto',
+                    style={ 'width': '60%',
+                              'height': 'auto',
+                              'aspect-ratio': '1200/374',
+                            }
                     )
             ],
             className = 'col-2',
             style = {
-                    'align-items': 'center',
-                    'padding-top' : '0.6%',
-                    'height' : 'auto'})
+                    #'align-items': 'right',
+                    'text-align': 'right',
+                    'padding-top' : '1.8%',
+                    'height' : '3%'})
+        ,
+        html.Div([
+            html.Img(
+                    src = app.get_asset_url('Sensirion1.png'),
+                    height = '35 px',
+                    width = 'auto',
+                    style={ 'width': '80%',
+                              'height': 'auto',
+                              'aspect-ratio': '280/95',
+                            }
+                    )
+            
+            ],
+            className = 'col-2',
+            style = {#'align-items': 'left',
+                     'text-align': 'left',
+                    'padding' : '1% ',
+                    'height' : '3%'}
+            )
 
         ],
         className = 'row',
-        style = {'height' : '2%',
+        style = {'height' : '3%',
                 'background-color' : corporate_colors['white']}
         )
 
@@ -675,106 +762,28 @@ app.layout = html.Div(children=[
                   #   style = {'color' : corporate_colors['sgigray12'], 'text-align' : 'left'}),
 
             html.Div([ # Internal row - RECAPS
+                     
                           dcc.Interval(
                 id='my_interval',
                 disabled=False,     #if True, the counter will no longer update
                 #interval=900000*2,    #every 30 min  #increment the counter n_intervals every interval milliseconds
-                interval=1*1000*30,
+                interval=900000*2,
                 n_intervals=0,      #number of times the interval has passed
                 # max_intervals=1,    #number of times the interval will be fired.
                                     #if -1, then the interval has no limit (the default)
                                     #and if 0 then the interval stops running.
     ),
-
-                html.Div([
-                    dcc.Graph(
-                        id="time-series-chart", animate=False)
-                    ,
-           # #######anfang Kopie vom drop
-          
-
-                    
-            #########ende kopie vom Drop
-                    ],
-                    className = 'col-9'), # Empty column
-                
-               # html.Div([],className = 'col-4'), # Empty column
-
-                html.Div([
-                    #titel für tabelle
-                       # html.H5(
-                       #       children="Aktuelle Messungen :", #('+ Datum+"):",
-                       #       style = {'text-align' : 'left', 'color' : corporate_colors['sgigray12']}
-                       #   ),
-                    dash_table.DataTable(
-                        
-                              id='tabelle',
-                  # data=dd_table.iloc[1:,:].to_dict('records'),  # the contents of the table
-                        # =============================================================================
-#                             neu
-# =============================================================================
-                                # style_data={
-                                #          'whiteSpace': 'normal', #first 2 should allow for text in cells to be in multiple lines
-                                #          #'height': 'auto',
-                                #         'lineHeight': '3px' #is in my css file
-                                #     },  #style data all cells but not the header
-                  
-                    style_header = {
-                            # 'backgroundColor': 'transparent',
-                            'background-color': corporate_colors['white'],
-                            'fontFamily' : corporate_font_family[1],
-                            'font-size' : '1.5rem',
-                            "font-weight" : "600",
-                            'color' : corporate_colors['sgigray12'],
-                            'border': '0px transparent',
-                            'textAlign' : 'left'},
-                        style_cell = {
-                            #'backgroundColor': 'transparent',
-                           # 'background-color': corporate_colors['white'],
-                            'fontFamily' : corporate_font_family[0],
-                            'font-size' : '1.2rem',
-                            "font-weight" : "600",
-                            'color' : corporate_colors['white'],
-                            'border': '0px transparent',
-                            'textAlign' : 'left'},
-                        cell_selectable = False,
-                        column_selectable = False
-                        ,
-                        style_data_conditional=[{'if': {'row_index': i}, 'background-color': table_col[i]} for i in range(7)]
-#style_data_conditional=[{'if': {'row_index': i, 'column_id': 'COLOR'}, 'background-color': df['COLOR'][i], 'color': df['COLOR'][i]} for i in range(df.shape[0])]
-#https://stackoverflow.com/questions/62175730/plotly-dash-data-table-background-color-for-individual-cell
-                    )
-                    ,
-                    dcc.Markdown(id="markdown", children=Markdown_Text  #block element 
-                                 ,
-                                 style={ "border": "1px solid black",
-                                        'border-radius' : '0.5rem',
-                                        'margin-top' : '1rem', #abstand von border und tabelle
-                                        #margin ist zwischen border und aussen
-                                        #"margin-left": "10px",
-                                        "padding-bottom": ".3rem",
-                                        "padding-left": ".5rem", #abstand zwischen text und border
-                                        "padding-right": ".5rem",
-                                        'background-color': corporate_colors['white']
-                                        }  
-                                 )
-
-                ],
-                       className = 'col-3'),
-                 # dcc.Interval(
-                 #                id='interval-component',
-                 #                interval=1*1000*60*5, # every 5 Minutes in milliseconds
-                 #                n_intervals=0
-                 #            ),
-
-                #html.Div([],className = 'col-4') # Empty column
-
-            ],
-            className = 'row',
-            style = recapdiv
-            ),
+        html.Div([ # Internal col-9
             
-            html.Div([ # Internal row
+                    dcc.Graph(
+                        id="time-series-chart", animate=False, 
+                        style={'height': '80%'},
+                        )
+                    ,
+ 
+                   
+              
+                          html.Div([ # Internal row
 
                 # Chart Column
            #######anfang Kopie vom drop
@@ -786,14 +795,14 @@ app.layout = html.Div(children=[
                         # },
                       options=[
                         # {"label": "Air Quality Index", "value":'AirQualityIndex' },
-                           { "label": html.Div(['Temperatur (°C)'], style={'border-radius' : '0.5rem', 'border' : '0.2rem solid #B22222',
+                           { "label": html.Div(['Temperatur (°C)'], style={'border-radius' : '0.5rem', 'border' : '0.3rem solid #B22222',
                                                                    'padding':'0rem 0.2rem', 'background-color':'#B2222298 '  #, 'opacity':'.4'
                                                                    # 'display':'block'
                                                                    #'width':'25%'
                                                                    }),
                         "value": "T",
                         },
-                        { "label": html.Div(['Air Quality Index'], style={'border-radius' : '0.5rem', 'border' : '0.2rem solid #79CDCD', 
+                        { "label": html.Div(['Air Quality Index'], style={'border-radius' : '0.5rem', 'border' : '0.3rem solid #79CDCD', 
                                                                            # 'display':'block'
                                                                            #'width':'50%'
                                                                            'padding':'0rem 0.2rem' , 'background-color':'#79CDCD98 '
@@ -801,35 +810,35 @@ app.layout = html.Div(children=[
                         "value": "AirQualityIndex",
                         },
                         
-                         { "label": html.Div(['relative Luftfeuchtigkeit (%)'], style={'border-radius' : '0.5rem', 'border' : '0.2rem solid #1874CD',
+                         { "label": html.Div(['relative Luftfeuchtigkeit (%)'], style={'border-radius' : '0.5rem', 'border' : '0.3rem solid #1874CD',
                                                                                   # 'display':'block'
                                                                                   #'width':'25%'
                                                                                   'padding':'0rem 0.2rem', 'background-color':'#1874CD98 '
                                                                                   }),
                         "value": "RH",
                         },
-                        { "label": html.Div(['Feinstaubpartikel <2,5 µm Durchm.'], style={'border-radius' : '0.5rem', 'border' : '0.2rem solid #8B5A2B',
+                        { "label": html.Div(['Feinstaubpartikel <2,5 µm Durchm.'], style={'border-radius' : '0.5rem', 'border' : '0.3rem solid #8B5A2B',
                                                                                   #'display':'block'
                                                                                  # 'width':'25%'
                                                                                  'padding':'0rem 0.2rem',  'background-color':'#8B5A2B98 '
                                                                                   }),
                         "value": "PM2p5",
                         },
-                        { "label": html.Div(['Feinstaubpartikel <10 µm Durchm.'], style={'border-radius' : '0.5rem', 'border' : '0.2rem solid #F9844A',
+                        { "label": html.Div(['Feinstaubpartikel <10 µm Durchm.'], style={'border-radius' : '0.5rem', 'border' : '0.3rem solid #F9844A',
                                                                                  # 'display':'block'
                                                                                  #'width':'25%'
                                                                                  'padding':'0rem 0.2rem',  'background-color':'#F9844A98 '
                                                                                  }),
                         "value": "PM1p0",
                         },
-                        { "label": html.Div(['Taupunkt (°C)'], style={'border-radius' : '0.5rem', 'border' : '0.2rem solid #3fa34d',
+                        { "label": html.Div(['Taupunkt (°C)'], style={'border-radius' : '0.5rem', 'border' : '0.3rem solid #3fa34d',
                                                                  'padding':'0rem 0.2rem', 'background-color':'#3fa34d98 '
                                                                  # 'display':'block'
                                                                  #'width':'25%'
                                                                  }),
                         "value": "DewPoint", 
                         },
-                         { "label": html.Div(['Luftdruck (MPascal =0.1 Bar)'], style={'border-radius' : '0.5rem', 'border' : '0.2rem solid #F9C74F', 
+                         { "label": html.Div(['Luftdruck (MPascal =0.1 Bar)'], style={'border-radius' : '0.5rem', 'border' : '0.3rem solid #F9C74F', 
                                                                              # 'display':'block'
                                                                             # 'width':'25%'
                                                                             'padding':'0rem 0.2rem', 'background-color':'#F9C74F98 '
@@ -861,13 +870,14 @@ app.layout = html.Div(children=[
                 #class names refer to css properties we define in seperate css file
                 className='my_box_container',           # class of the container (div)
                   style={'display':'inline-block'
+                         ,'text-align':'left'
                          #, 'width': "30em"
                          #,"margin-left": "3px"
                          },             # style of the container (div)
 
                 inputClassName='my_box_input',          # class of the <input> checkbox element, checkbox itself
                  inputStyle={'cursor':'pointer'
-                             ,'margin-right': '2px'
+                             ,'margin-right': '0.4rem'
                              #, 'column-count': '2'
                              },      # style of the <input> checkbox element
 
@@ -875,15 +885,16 @@ app.layout = html.Div(children=[
                 # labelStyle={'background':'#A5D6A7',   # style of the <label> that wraps the checkbox input and the option's label
                 #             'padding':'0.5rem 1rem',
                 #             'border-radius':'0.5rem'},
-                labelStyle = {'color' : corporate_colors['sgigray12'], 'font-size': "1.3rem"
+                labelStyle = {'color' : corporate_colors['sgigray12'], 'font-size': "1.7rem"
                               , 'white-space': 'nowrap'
                               #,'padding':'0.5rem 1rem',
                               ,'padding-top':'0.5rem '
                               ,'padding-bottom':'0.5rem '
                               ,'padding-left':'1rem '
+                              ,'padding-right':'1rem '
                               ,'display':'inline-flex'
-                             # , "margin-right": "7px"
-                              , 'font-weight':'500'
+                              , "margin-right": "1rem"
+                              , 'font-weight':'600'
                                # ,'font-family':'Roboto'
                               #,  'column-count': '2'
                               },
@@ -892,12 +903,283 @@ app.layout = html.Div(children=[
                 )
                             ],
                
-                className = 'col-12'),
+                className = 'col-12',
+                style= {'padding': '3% 0%'}
+                ),
 
                 
 
             ],
             className = 'row'), # Internal row
+                    ],
+                 
+                    
+                    className = 'col-9'), # Empty column
+                
+               # html.Div([],className = 'col-4'), # Empty column
+
+                html.Div([  #internal col 3
+                    #titel für tabelle
+                       # html.H5(
+                       #       children="Aktuelle Messungen :", #('+ Datum+"):",
+                       #       style = {'text-align' : 'left', 'color' : corporate_colors['sgigray12']}
+                       #   ),
+                    html.Div([     #internal row
+                              html.Div([ #internal col
+                    dash_table.DataTable(
+                        
+                              id='tabelle',
+                  # data=dd_table.iloc[1:,:].to_dict('records'),  # the contents of the table
+                        # =============================================================================
+#                             neu
+# =============================================================================
+                                # style_data={
+                                #          'whiteSpace': 'normal', #first 2 should allow for text in cells to be in multiple lines
+                                #          #'height': 'auto',
+                                #         'lineHeight': '3px' #is in my css file
+                                #     },  #style data all cells but not the header
+                      ###to wrap onto multiple lines but only data not header          
+# =============================================================================
+#                      style_data={
+#                                         'whiteSpace': 'normal',
+#                                         'height': 'auto',
+#                                     },
+# =============================================================================
+                    #for cells not header
+                        style_table = {
+                                        "borderRadius": "10px"
+                                        , "overflow": "hidden"
+                                      #  ,
+                                      # 'border-collapse': 'separate !important'
+                                        },
+# ================works border radius for entire thing but also in header will wiss grusig=============================================================
+#                         style_table = {"borderRadius": "10px"
+#                                         , "overflow": "hidden"
+#                                       #  ,
+#                                       # 'border-collapse': 'separate !important'
+#                                         },
+# =============================================================================
+                        style_header = {
+                            # 'backgroundColor': 'transparent',
+                            'background-color': corporate_colors['bg'],
+                            'fontFamily' : corporate_font_family[1],
+                            'font-size' : '1.5rem',
+                            "font-weight" : "600",
+                            'color' : corporate_colors['sgigray12'],
+                            'border': '0',
+                            'textAlign' : 'left',
+                             'whiteSpace': 'normal',
+                             'height': 'auto',
+                             },
+                        style_cell = {
+                            #'backgroundColor': 'transparent',
+                           # 'background-color': corporate_colors['white'],
+                            'fontFamily' : corporate_font_family[0],
+                            'font-size' : '1.2rem',
+                            "font-weight" : "600",
+                            'color' : corporate_colors['white'],
+                            #"border": "1px solid ",
+                            # 'border': '1px solid white',
+                            # 'border-radius': '.5rem',
+                            'textAlign' : 'left',
+                            # "borderRadius": "10px",
+                            # "overflow": "hidden"
+                            },
+                        cell_selectable = False,
+                        column_selectable = False
+                        ,
+                        style_data_conditional=
+                            # [
+                                  
+                            #                     {
+                            #                     'if': {
+                            #                         'row_index': 0} ,                                               
+                            #                     'border-top-radius':'15px'}]+
+                            [ 
+                                                {'if': {'row_index': i}, 'background-color': table_col[i]
+                                                  ,
+                                                 
+                                                  'border': '1px solid'+table_col[i]
+                                                
+                                                 } 
+
+                            for i in range(7)],
+####fix width % of 1. col
+                        style_cell_conditional=[
+                                                {'if': {'column_id': '' },
+                                                  'width': '20%'},
+                                              ]
+#style_data_conditional=[{'if': {'row_index': i, 'column_id': 'COLOR'}, 'background-color': df['COLOR'][i], 'color': df['COLOR'][i]} for i in range(df.shape[0])]
+#https://stackoverflow.com/questions/62175730/plotly-dash-data-table-background-color-for-individual-cell
+                    )
+                    ] , className = 'col-12',
+                                   style=boxcol_styling),
+                              ] ,           className = 'row'
+                             ,
+            style = recapdiv
+            )
+                    ,
+                     html.Div([     #internal row
+                          html.Div([ #internal col
+                    dcc.Markdown(id="markdown", children=Markdown_Text  #block element 
+                                 ,
+                                 style={ "border": "1px solid black",
+                                        'border-radius' : '0.5rem',
+                                        'margin-top' : '1rem', #abstand von border und tabelle
+                                        #margin ist zwischen border und aussen
+                                        #"margin-left": "10px",
+                                        "padding-bottom": ".3rem",
+                                        "padding-left": ".5rem", #abstand zwischen text und border
+                                        "padding-right": ".5rem",
+                                        'background-color': corporate_colors['white']
+                                        }  
+                                 )
+                    ] , className = 'col-12',
+                                   style=boxcol_styling),
+                              ],
+                                          className = 'row',
+            style = recapdiv
+            ),
+
+                ],
+                       className = 'col-3'),
+                 # dcc.Interval(
+                 #                id='interval-component',
+                 #                interval=1*1000*60*5, # every 5 Minutes in milliseconds
+                 #                n_intervals=0
+                 #            ),
+
+                #html.Div([],className = 'col-4') # Empty column
+
+            ],
+            className = 'row',
+            style = recapdiv
+            ),
+            
+           #  html.Div([ # Internal row
+
+           #      # Chart Column
+           # #######anfang Kopie vom drop
+           #          html.Div([#"Wählen Sie Messwerte für die Graphik:" ,
+           #                  dcc.Checklist(id="ticker",
+                    
+           #              # #{ "label": html.Div(['Air Quality Index'], style={'color': 'Gold','border-radius' : '2px', 'border' : '1px solid #ccc', 'font-size': 20}),
+           #              # "value": "AirQualityIndex",
+           #              # },
+           #            options=[
+           #              # {"label": "Air Quality Index", "value":'AirQualityIndex' },
+           #                 { "label": html.Div(['Temperatur (°C)'], style={'border-radius' : '0.5rem', 'border' : '0.2rem solid #B22222',
+           #                                                         'padding':'0rem 0.2rem', 'background-color':'#B2222298 '  #, 'opacity':'.4'
+           #                                                         # 'display':'block'
+           #                                                         #'width':'25%'
+           #                                                         }),
+           #              "value": "T",
+           #              },
+           #              { "label": html.Div(['Air Quality Index'], style={'border-radius' : '0.5rem', 'border' : '0.2rem solid #79CDCD', 
+           #                                                                 # 'display':'block'
+           #                                                                 #'width':'50%'
+           #                                                                 'padding':'0rem 0.2rem' , 'background-color':'#79CDCD98 '
+           #                                                                 }),
+           #              "value": "AirQualityIndex",
+           #              },
+                        
+           #               { "label": html.Div(['relative Luftfeuchtigkeit (%)'], style={'border-radius' : '0.5rem', 'border' : '0.2rem solid #1874CD',
+           #                                                                        # 'display':'block'
+           #                                                                        #'width':'25%'
+           #                                                                        'padding':'0rem 0.2rem', 'background-color':'#1874CD98 '
+           #                                                                        }),
+           #              "value": "RH",
+           #              },
+           #              { "label": html.Div(['Feinstaubpartikel <2,5 µm Durchm.'], style={'border-radius' : '0.5rem', 'border' : '0.2rem solid #8B5A2B',
+           #                                                                        #'display':'block'
+           #                                                                       # 'width':'25%'
+           #                                                                       'padding':'0rem 0.2rem',  'background-color':'#8B5A2B98 '
+           #                                                                        }),
+           #              "value": "PM2p5",
+           #              },
+           #              { "label": html.Div(['Feinstaubpartikel <10 µm Durchm.'], style={'border-radius' : '0.5rem', 'border' : '0.2rem solid #F9844A',
+           #                                                                       # 'display':'block'
+           #                                                                       #'width':'25%'
+           #                                                                       'padding':'0rem 0.2rem',  'background-color':'#F9844A98 '
+           #                                                                       }),
+           #              "value": "PM1p0",
+           #              },
+           #              { "label": html.Div(['Taupunkt (°C)'], style={'border-radius' : '0.5rem', 'border' : '0.2rem solid #3fa34d',
+           #                                                       'padding':'0rem 0.2rem', 'background-color':'#3fa34d98 '
+           #                                                       # 'display':'block'
+           #                                                       #'width':'25%'
+           #                                                       }),
+           #              "value": "DewPoint", 
+           #              },
+           #               { "label": html.Div(['Luftdruck (MPascal =0.1 Bar)'], style={'border-radius' : '0.5rem', 'border' : '0.2rem solid #F9C74F', 
+           #                                                                   # 'display':'block'
+           #                                                                  # 'width':'25%'
+           #                                                                  'padding':'0rem 0.2rem', 'background-color':'#F9C74F98 '
+           #                                                                   }),
+           #              "value": "AtmosphericPressure",
+           #              },
+           #              # { "label": html.Div(['relative Luftfeuchtigkeit (%)'], style={'border-radius' : '0.5rem', 'border' : '0.2rem solid #4F94CD',
+           #              #                                                           # 'display':'block'
+           #              #                                                           #'width':'25%'
+           #              #                                                           'padding':'0rem 0.2rem', 'background-color':'#4F94CD98 '
+           #              #                                                           }),
+           #              # "value": "RH",
+           #              # },
+
+                        
+                     
+           #              # {"label": 'Luftdruck (MPascal)', "value": "AtmosphericPressure"},
+           #              # {"label": "relative Luftfeuchtigkeit", "value": 'RH'},
+           #            #   {"label": "Feinstaubpartikel <2,5 µm", "value": 'PM2p5'},
+           #            #   {"label": "Feinstaubpartikel <10 µm", "value": 'PM1p0'},
+           #            #   {"label": "Taupunkt", "value": 'DewPoint'},
+           #            # {"label": "Temperatur", "value": 'T'}
+           #             ]
+           #            ,
+           #       #use label so that what user sees can be different word than what is in the df
+           #      #multi=True,  #allows the user to select more than 1
+           #      value=["T",'PM2p5', "PM1p0",'RH', 'AirQualityIndex' ], #initial value the user can change that
+                
+           #      #class names refer to css properties we define in seperate css file
+           #      className='my_box_container',           # class of the container (div)
+           #        style={'display':'inline-block'
+           #               #, 'width': "30em"
+           #               #,"margin-left": "3px"
+           #               },             # style of the container (div)
+
+           #      inputClassName='my_box_input',          # class of the <input> checkbox element, checkbox itself
+           #       inputStyle={'cursor':'pointer'
+           #                   ,'margin-right': '0.2rem'
+           #                   #, 'column-count': '2'
+           #                   },      # style of the <input> checkbox element
+
+           #      labelClassName='my_box_label',          # class of the <label> that wraps the checkbox input and the option's label
+           #      # labelStyle={'background':'#A5D6A7',   # style of the <label> that wraps the checkbox input and the option's label
+           #      #             'padding':'0.5rem 1rem',
+           #      #             'border-radius':'0.5rem'},
+           #      labelStyle = {'color' : corporate_colors['sgigray12'], 'font-size': "1.7rem"
+           #                    , 'white-space': 'nowrap'
+           #                    #,'padding':'0.5rem 1rem',
+           #                    ,'padding-top':'0.5rem '
+           #                    ,'padding-bottom':'0.5rem '
+           #                    ,'padding-left':'1rem '
+           #                    ,'display':'inline-flex'
+           #                   # , "margin-right": "7px"
+           #                    , 'font-weight':'500'
+           #                     # ,'font-family':'Roboto'
+           #                    #,  'column-count': '2'
+           #                    },
+
+
+           #      )
+           #                  ],
+               
+           #      className = 'col-12'),
+
+                
+
+           #  ],
+           #  className = 'row'), # Internal row
             
         ],
         className = 'col-12',
@@ -908,11 +1190,13 @@ app.layout = html.Div(children=[
        
 
     ],
-    className = 'row sticky-top'), # External row
+    className = 'row'), # External row
 
 ]
-    # ,
-    # style= {'height':'100vh'
+    ,
+    # style= {'display':'flex',
+    #         'flex-direction': 'column',
+    #         'flex' : '1'
     #     }
     )
 
@@ -1136,6 +1420,7 @@ def display_time_series(ticker, dff):
 # =============================================================================
     
     return fig
+
 
 
 

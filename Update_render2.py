@@ -431,7 +431,7 @@ Der
 
 
 
-
+base_url = os.getenv('base_url')
 api_key = os.getenv('api_key')
 organizationId = os.getenv('organizationId')
 
@@ -508,7 +508,7 @@ def get_data():
     
     returnMissing="false"
     
-    m_url="https://cloud.nubo-air.com/api/"+organizationId+"/devices/"+deviceId+"/measurements/v2?from="+From+"&to="+to+"&aggregationTimeRange="+aggregationTimeRange+"&returnMissing="+returnMissing
+    m_url=base_url+"/api/"+organizationId+"/devices/"+deviceId+"/measurements/v2?from="+From+"&to="+to+"&aggregationTimeRange="+aggregationTimeRange+"&returnMissing="+returnMissing
 
 
     

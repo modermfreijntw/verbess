@@ -24,8 +24,8 @@ html {
   background-size: cover !important;
   width: 100% !important;
   /*min-height: 100% !important;*/
-  min-width: 100% !important;
-  /*
+  min-width: 90% !important;
+  
   min-height: 100vh !important; /*to adjust*/
   */
   overflow-x: visible !important;
@@ -41,7 +41,7 @@ body {
   /*font-family: Roboto;/* !important;*/
   background-color: transparent; /* By default the body color is white, making any transparent component, actually white!*/
   color : #474646 !important;
-  /*
+  
   min-height: 100vh !important; 
   display: flex !important; 
   flex-direction: column !important;
@@ -68,7 +68,17 @@ body, .container {
   align-content: stretch !important;
  
 }
-
+*/
+row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    justify-content: space-evenly!important;
+}
+/*
 .row {
   flex-wrap: wrap !important;
   flex: 1 !important;
@@ -413,8 +423,8 @@ tr:hover {
 
 
 .dash-table-container .dash-spreadsheet-container .dash-spreadsheet-inner tr{
-    min-height: .7rem !important;
-    height: 1.2rem !important;
+    min-height: 1rem !important;
+    height: 1.5rem !important;
     /*
     border-width: 1px !important;
     border-style: solid !important;
@@ -435,6 +445,7 @@ tr:hover {
     border-color: inherit;
 }
 */
+
 /*round corners of table
 .dash-spreadsheet-container {
    border: 1px solid white !important; 
@@ -445,9 +456,9 @@ tr:hover {
 */
 
 .dash-spreadsheet td div{
-    line-height: 2rem !important;  /*was 1.2rem */
-    max-height: 3rem !important;
-    min-height: 1rem !important; 
+    line-height: 4vh !important;  /*was 1.2rem */
+    max-height: 18vh !important;
+    min-height: 2vh !important; 
     height: auto !important;
     display: block !important;
     overflow-y: hidden !important;
@@ -487,7 +498,8 @@ h1, h2, h3, h4, h5, h6 {
   color: rgb(71,70,70) !important;
   }
   
-h1 { font-size: 3.4rem !important;
+h1 { font-size: 5vh !important; /*3.4rem */
+    /* max-height: 10vh !important;*/
      font-weight: 700 !important;
 }
 /*Infobox title*/
@@ -506,7 +518,8 @@ h5 { font-size: 1.8rem !important;
 }
 
 p {  font-family: 'RobotoLight' !important; 
-     font-size: 1.2rem !important;
+     /*font-size: 1.2rem !important;*/
+     font-size: 2vh !important;
      font-weight: 300 !important;
      padding-bottom: 0.3rem !important;
      margin-top: 0px !important;
@@ -516,7 +529,7 @@ p {  font-family: 'RobotoLight' !important;
 
 strong {
     font-family: 'RobotoCondensed' !important;
-    font-size: 1.4rem !important;
+    font-size: 2.2vh !important;  /*was 1.4rem*/
     font-weight: 600 !important;
     }
 

@@ -660,6 +660,7 @@ def get_table_dd(dff):
     return dd_table.iloc[1:,:].to_dict('records')#dd_table
 
 
+
 def get_header():
 
     header = html.Div([
@@ -694,7 +695,7 @@ def get_header():
                     src = app.get_asset_url('NoserEng_Logo_RGB.webp'),
                     height = '30 px',
                     width = 'auto',
-                    style={ 'width': '60%',
+                    style={ 'width': '50%',
                               'height': 'auto',
                               'aspect-ratio': '1200/374',
                             }
@@ -704,7 +705,7 @@ def get_header():
             style = {
                     #'align-items': 'right',
                     'text-align': 'right',
-                    'padding-top' : '1.8%',
+                    'padding-top' : '4vh',
                     'height' : '3%'})
         ,
         html.Div([
@@ -712,7 +713,7 @@ def get_header():
                     src = app.get_asset_url('Sensirion1.png'),
                     height = '35 px',
                     width = 'auto',
-                    style={ 'width': '80%',
+                    style={ 'width': '70%',
                               'height': 'auto',
                               'aspect-ratio': '280/95',
                             }
@@ -722,13 +723,15 @@ def get_header():
             className = 'col-2',
             style = {#'align-items': 'left',
                      'text-align': 'left',
-                    'padding' : '1% ',
-                    'height' : '3%'}
+                    'padding' : '2vh ',
+                    'height' : '3%',
+                    #'margin-bottom':'1%'
+                    }
             )
 
         ],
         className = 'row',
-        style = {'height' : '3%',
+        style = {'height' : '11vh',
                 'background-color' : corporate_colors['white']}
         )
 
@@ -777,7 +780,7 @@ app.layout = html.Div(children=[
             
                     dcc.Graph(
                         id="time-series-chart", animate=False, 
-                        style={'height': '80%'},
+                        style={'height': '88vh'},
                         )
                     ,
  
@@ -963,7 +966,7 @@ app.layout = html.Div(children=[
                             # 'backgroundColor': 'transparent',
                             'background-color': corporate_colors['bg'],
                             'fontFamily' : corporate_font_family[1],
-                            'font-size' : '1.5rem',
+                            'font-size' : '2.6vh',
                             "font-weight" : "600",
                             'color' : corporate_colors['sgigray12'],
                             'border': '0',
@@ -975,7 +978,7 @@ app.layout = html.Div(children=[
                             #'backgroundColor': 'transparent',
                            # 'background-color': corporate_colors['white'],
                             'fontFamily' : corporate_font_family[0],
-                            'font-size' : '1.2rem',
+                            'font-size' : '2.2vh',
                             "font-weight" : "600",
                             'color' : corporate_colors['white'],
                             #"border": "1px solid ",
@@ -1007,7 +1010,7 @@ app.layout = html.Div(children=[
 ####fix width % of 1. col
                         style_cell_conditional=[
                                                 {'if': {'column_id': '' },
-                                                  'width': '20%'},
+                                                  'width': '15%'},
                                               ]
 #style_data_conditional=[{'if': {'row_index': i, 'column_id': 'COLOR'}, 'background-color': df['COLOR'][i], 'color': df['COLOR'][i]} for i in range(df.shape[0])]
 #https://stackoverflow.com/questions/62175730/plotly-dash-data-table-background-color-for-individual-cell

@@ -887,7 +887,7 @@ app.layout = html.Div(children=[
                 # labelStyle={'background':'#A5D6A7',   # style of the <label> that wraps the checkbox input and the option's label
                 #             'padding':'0.5rem 1rem',
                 #             'border-radius':'0.5rem'},
-                labelStyle = {'color' : corporate_colors['sgigray12'], 'font-size': "1.7rem"
+                labelStyle = {'color' : corporate_colors['sgigray12'], 'font-size': "2vh"
                               , 'white-space': 'nowrap'
                               #,'padding':'0.5rem 1rem',
                               ,'padding-top':'0.5rem '

@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Created on Fri Sep  9 18:32:26 2022
 
-@author: maggi
+
 """
 #timezone
 #every 30 min

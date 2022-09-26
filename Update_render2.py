@@ -779,7 +779,7 @@ app.layout = html.Div(children=[
             
                     dcc.Graph(
                         id="time-series-chart", animate=False, 
-                        style={'height': '88vh'},
+                        style={'height': '75vh'},
                         )
                     ,
  
